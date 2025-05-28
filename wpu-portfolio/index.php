@@ -20,8 +20,31 @@ $subscriber = $result['items'][0]['statistics']['subscriberCount'];
 $urllatestVideo = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyBpo-RsOjYaFpPvZKaUAggbdpZXLZI5U7U&channelId=UCkXmLjEr95LVtGuIm3l2dPg&maxResults=1&order=date&part=snippet';
 $result = get_CURL($urllatestVideo);
 $latesVideoId =$result['items']['0']['id']['videoId'];
-?>
 
+
+//instagram API
+
+$clientID = "17841407994486586";
+$accessToken = "IGAARbwNAKULpBZAE80c3N4MkdqUkZAxZATNubnBtd19OWTF1eGRVVEcwT1hoZAEFoM0hNUHZALWnRiQjFfUTl2LU5wdkNQM05TVXJSa3FEa3hqTEY2clNBOEVSYU5oS1JpSXlzcUlQY0IzcVlhc0RaZADdRdjNpTWtrVXlOUmxMaEM0RQZDZD";
+
+// Informasi akun IG
+$result2 = get_Curl("https://graph.instagram.com/v22.0/me?fields=username,profile_picture_url,followers_count&access_token=$accessToken");
+
+$usernameIG = $result2['username'];
+$profilePictureIG = $result2['profile_picture_url'];
+$followersIG = $result2['followers_count'];
+
+// Media IG
+$media = get_CURL("https://graph.instagram.com/me/media?fields=id,media_url,caption&access_token=$accessToken");
+
+if (count($media['data']) >= 2) {
+    $gambar1 = $media['data'][0]['media_url'];
+    $gambar2 = $media['data'][1]['media_url'];
+}
+echo "<img src='$gambar1' width='50' style='margin:5px; border-radius:10px;'>";
+echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -128,16 +151,18 @@ $latesVideoId =$result['items']['0']['id']['videoId'];
       <div class="col-md-6 mb-4">
         <div class="row mb-2">
           <div class="col-md-4 text-center">
-            <img src="img/profile1.jpeg" width="100%" class="rounded-circle img-thumbnail">
+            <img src="<?= $profilePictureIG; ?>" width="100%" class="rounded-circle img-thumbnail">
           </div>
           <div class="col-md-8 d-flex flex-column justify-content-center">
-            <h5>@rindurhl_</h5>
-            <p>43000 followers</p>
+            <h5>@<?= $usernameIG; ?></h5>
+            <p><?= number_format($followersIG); ?> followers</p>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <img src="img/thumbs/1.png" class="img-fluid rounded">
+            <img src="<?= $gambar1; ?>" class="img-fluid rounded mb-2">
+            <img src="<?= $gambar2; ?>" class="img-fluid rounded">
+
           </div>
         </div>
       </div>
