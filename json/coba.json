@@ -1,0 +1,30 @@
+[
+    {
+         "nama": "Rindu", 
+         "umur": 21,
+         "nrp": "2217020100",
+         "lulus": true,
+         "hobby": [
+             "masak",
+             "nyanyi"
+        ],
+         "pembimbing": {
+         "pembimbing1": "Annisa shabrina",
+         "pembimbing2": "Putri Syakira"
+        }
+    },
+    {
+         "nama": "Rindu", 
+         "umur": 21,
+         "nrp": "2217020100",
+         "lulus": true,
+         "hobby": [
+             "masak",
+             "nyanyi"
+        ],
+         "pembimbing": {
+         "pembimbing1": "Annisa shabrina",
+         "pembimbing2": "Putri Syakira"
+        }
+    }
+]
