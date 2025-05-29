@@ -37,12 +37,10 @@ $followersIG = $result2['followers_count'];
 // Media IG
 $media = get_CURL("https://graph.instagram.com/me/media?fields=id,media_url,caption&access_token=$accessToken");
 
-if (count($media['data']) >= 2) {
+$gambar1 = "";
+if (isset($media['data']) && count($media['data']) >= 1) {
     $gambar1 = $media['data'][0]['media_url'];
-    $gambar2 = $media['data'][1]['media_url'];
 }
-echo "<img src='$gambar1' width='50' style='margin:5px; border-radius:10px;'>";
-echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
 
 ?>
 
@@ -91,7 +89,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
         <div class="text-center">
           <img src="img/profile1.jpeg" class="rounded-circle img-thumbnail">
           <h1 class="display-4">Rindu Arifa Rahill</h1>
-          <h3 class="lead">Lecturer | Programmer | Youtuber</h3>
+          <h3 class="lead">Mahasiswa | Programmer | Youtuber</h3>
         </div>
       </div>
     </div>
@@ -107,10 +105,10 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
         </div>
         <div class="row justify-content-center">
           <div class="col-md-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, molestiae sunt doloribus error ullam expedita cumque blanditiis quas vero, qui, consectetur modi possimus. Consequuntur optio ad quae possimus, debitis earum.</p>
+            <p>Sebagai mahasiswa, aku terus belajar dan beradaptasi dengan perkembangan teknologi supaya bisa menghadapi tantangan masa depan. Aku percaya bahwa proses belajar adalah perjalanan tanpa akhir yang membuka peluang untuk berinovasi dan memberi kontribusi nyata..</p>
           </div>
           <div class="col-md-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, molestiae sunt doloribus error ullam expedita cumque blanditiis quas vero, qui, consectetur modi possimus. Consequuntur optio ad quae possimus, debitis earum.</p>
+            <p>Menjadi mahasiswa bukan hanya tentang kuliah, tapi juga tentang membangun keterampilan dan wawasan yang bermanfaat. Aku selalu bersemangat untuk mengeksplorasi hal baru dan memperbaiki diri demi mencapai tujuan yang lebih besar.</p>
           </div>
         </div>
       </div>
@@ -161,7 +159,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
         <div class="row">
           <div class="col">
             <img src="<?= $gambar1; ?>" class="img-fluid rounded mb-2">
-            <img src="<?= $gambar2; ?>" class="img-fluid rounded">
+  
 
           </div>
         </div>
@@ -184,7 +182,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
             <div class="card">
               <img class="card-img-top" src="img/thumbs/1.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text"> Rindu Arifa Rahill 12 April 2004.</p>
               </div>
             </div>
           </div>
@@ -193,7 +191,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
             <div class="card">
               <img class="card-img-top" src="img/thumbs/2.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Berada di keluarga yang penuh cinta</p>
               </div>
             </div>
           </div>
@@ -202,7 +200,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
             <div class="card">
               <img class="card-img-top" src="img/thumbs/3.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Berasal dari Solok, Sumatra Barat</p>
               </div>
             </div>
           </div>   
@@ -213,7 +211,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
             <div class="card">
               <img class="card-img-top" src="img/thumbs/4.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Mahasiswa Sistem Informasi 22, Fakultas Sains dan Teknologi</p>
               </div>
             </div>
           </div> 
@@ -221,7 +219,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
             <div class="card">
               <img class="card-img-top" src="img/thumbs/5.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                <p class="card-text">Kuliah di UIN IMAM BONJOL PADANG
                 </p>
               </div>
             </div>
@@ -231,7 +229,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
             <div class="card">
               <img class="card-img-top" src="img/thumbs/6.png" alt="Card image cap">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Hobi Ngoding</p>
               </div>
             </div>
           </div>
@@ -254,15 +252,15 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
             <div class="card bg-primary text-white mb-4 text-center">
               <div class="card-body">
                 <h5 class="card-title">Contact Me</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Contact me for more information or project collaboration!</p>
               </div>
             </div>
             
             <ul class="list-group mb-4">
               <li class="list-group-item"><h3>Location</h3></li>
               <li class="list-group-item">My Office</li>
-              <li class="list-group-item">Jl. Setiabudhi No. 193, Bandung</li>
-              <li class="list-group-item">West Java, Indonesia</li>
+              <li class="list-group-item">Jl. Ekora, Padang</li>
+              <li class="list-group-item">West Sumatera, Indonesia</li>
             </ul>
           </div>
 
@@ -301,7 +299,7 @@ echo "<img src='$gambar2' width='50' style='margin:5px; border-radius:10px;'>";
       <div class="container">
         <div class="row">
           <div class="col text-center">
-            <p>Copyright &copy; 2018.</p>
+            <p>Rindoe  &copy; 2025</p>
           </div>
         </div>
       </div>
