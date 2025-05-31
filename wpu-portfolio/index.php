@@ -169,73 +169,61 @@ if (isset($media['data']) && count($media['data']) >= 1) {
 </section>
 
 
-    <!-- Portfolio -->
-    <section class="portfolio " id="portfolio">
-      <div class="container">
-        <div class="row pt-4 mb-4">
-          <div class="col text-center">
-            <h2>Portfolio</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/1.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text"> Rindu Arifa Rahill 12 April 2004.</p>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/2.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Berada di keluarga yang penuh cinta</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/3.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Berasal dari Solok, Sumatra Barat</p>
-              </div>
-            </div>
-          </div>   
-        </div>
-
-        <div class="row">
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/4.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Mahasiswa Sistem Informasi 22, Fakultas Sains dan Teknologi</p>
-              </div>
-            </div>
-          </div> 
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/5.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Kuliah di UIN IMAM BONJOL PADANG
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md mb-4">
-            <div class="card">
-              <img class="card-img-top" src="img/thumbs/6.png" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Hobi Ngoding</p>
-              </div>
-            </div>
-          </div>
+<!-- Portfolio Section -->
+<section id="portfolio" class="container my-5">
+  <h2 class="text-center mb-4">Portfolio</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="img/thumbs/1.png" class="card-img-top" alt="Tentang Saya 1">
+        <div class="card-body">
+          <p class="card-text">Rindu Arifa Rahill 12 April 2004</p>
+          <p class="card-text">Mahasiswa Sistem Informasi angkatan 2022, Fakultas Sains dan Teknologi, UIN Imam Bonjol PADANG.</p>
         </div>
       </div>
-    </section>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="img/thumbs/6.png" class="card-img-top" alt="Tentang Saya 2">
+        <div class="card-body">
+          <p class="card-text">Memiliki minat dan hobi dalam rancang bangun web</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="img/thumbs/3.png" class="card-img-top" alt="Tentang Saya 3">
+        <div class="card-body">
+          <p class="card-text">Berasal Dari Solok, Sumatra Barat</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- My Project Section -->
+<section id="projects" class="container my-5">
+  <h2 class="text-center mb-4">My Projects</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="img/thumbs/2.png" class="card-img-top" alt="Rest API Project">
+        <div class="card-body">
+          <p class="card-text">
+            REST API meliputi autentikasi pengguna, manajemen data user, operasi CRUD untuk berbagai data, dan dokumentasi interaktif untuk memudahkan integrasi.
+            
+          </p>
+          <p>
+            <a href="https://github.com/rindoe12/rest-api" target="_blank" class="btn btn-primary btn-sm">Lihat Project</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
     <!-- Contact -->
