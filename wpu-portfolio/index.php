@@ -158,7 +158,8 @@ if (isset($media['data']) && count($media['data']) >= 1) {
         </div>
         <div class="row">
           <div class="col">
-            <img src="<?= $gambar1; ?>" class="img-fluid rounded mb-2">
+            <img src="<?= $gambar1; ?>" class="img-fluid rounded mb-2" style="max-width: 300px; height: auto;">
+
   
 
           </div>
