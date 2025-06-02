@@ -1,38 +1,41 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
-$client = new Client();
+$httpClient = new Client();
+$apiKey = '52ac2799';
+$searchQuery = 'transformers';
 
-$response = $client->request('GET', 'http://www.omdbapi.com', [
+$response = $httpClient->get('http://www.omdbapi.com', [
     'query' => [
-        'apikey' => '52ac2799',
-        's' => 'transformers'
+        'apikey' => $apiKey,
+        's' => $searchQuery
     ]
 ]);
 
-$result = json_decode($response->getBody()->getContents(), true);
+$bodyContent = $response->getBody()->getContents();
+$movies = json_decode($bodyContent, true);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Movie</title>
+  <title>Movie List</title>
 </head>
 <body>
 
-<?php if (isset($result['Search'])) : ?>
-  <?php foreach($result['Search'] as $movie) : ?>
+<?php if (!empty($movies['Search'])): ?>
+  <?php foreach ($movies['Search'] as $item): ?>
     <ul>
-      <li>Title: <?= $movie['Title']; ?></li>
-      <li>Year: <?= $movie['Year']; ?></li>
-      <li><img src="<?= $movie['Poster']; ?>" width="100"></li>
+      <li>Title: <?= htmlspecialchars($item['Title']); ?></li>
+      <li>Year: <?= htmlspecialchars($item['Year']); ?></li>
+      <li><img src="<?= htmlspecialchars($item['Poster']); ?>" alt="Poster" width="100"></li>
     </ul>
   <?php endforeach; ?>
-<?php else : ?>
-  <p>Data film tidak ditemukan.</p>
+<?php else: ?>
+  <p>No movies found.</p>
 <?php endif; ?>
 
 </body>
