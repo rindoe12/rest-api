@@ -93,13 +93,19 @@ public function hapusDataMahasiswa($id)
         return $result;
     }
 
-    public function cariDataMahasiswa()
-    {
-        $keyword = $this->input->post('keyword', true);
-        $this->db->like('nama', $keyword);
-        $this->db->or_like('jurusan', $keyword);
-        $this->db->or_like('nrp', $keyword);
-        $this->db->or_like('email', $keyword);
-        return $this->db->get('mahasiswa')->result_array();
-    }
+public function cariDataMahasiswa()
+{
+    $keyword = $this->input->post('keyword', true);
+
+    $this->db->group_start();
+    $this->db->like('nama', $keyword);
+    $this->db->or_like('jurusan', $keyword);
+    $this->db->or_like('nrp', $keyword);
+    $this->db->or_like('email', $keyword);
+    $this->db->group_end();
+
+    $this->db->order_by('nama', 'ASC'); // Urutkan berdasarkan nama, bisa diganti sesuai kebutuhan
+    return $this->db->get('mahasiswa')->result_array();
+}
+
 }
